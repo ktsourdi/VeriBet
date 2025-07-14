@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Tipster {
+  id          Int          @id @default(autoincrement())
+  name        String
+  predictions Prediction[]
+}
+
+model Prediction {
+  id        Int      @id @default(autoincrement())
+  tipster   Tipster  @relation(fields: [tipsterId], references: [id])
+  tipsterId Int
+  event     String
+  pick      String
+  stake     Float
+  odds      Float
+  result    Result    @default(PENDING)
+  profit    Float     @default(0)
+  createdAt DateTime  @default(now())
+}
+
+enum Result {
+  WIN
+  LOSS
+  PENDING
+} 
