@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import PredictionForm from '@/components/PredictionForm'
 import PredictionList from '@/components/PredictionList'
