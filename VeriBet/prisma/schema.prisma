@@ -9,7 +9,7 @@ datasource db {
 
 model Tipster {
   id          Int          @id @default(autoincrement())
-  name        String
+  name        String       @unique
   predictions Prediction[]
 }
 
