@@ -9,6 +9,7 @@
     "lint": "next lint",
     "prisma": "prisma",
     "db:push": "prisma db push",
+    "db:seed": "node scripts/seed.js",
     "postinstall": "prisma generate"
   },
   "dependencies": {
