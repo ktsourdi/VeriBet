@@ -4,12 +4,12 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = "file:./dev.db"
+  url      = env("DATABASE_URL")
 }
 
 model Tipster {
   id          Int          @id @default(autoincrement())
-  name        String
+  name        String       @unique
   predictions Prediction[]
 }
 

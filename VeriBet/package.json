@@ -8,18 +8,22 @@
     "start": "next start",
     "lint": "next lint",
     "prisma": "prisma",
-    "db:push": "prisma db push"
+    "db:push": "prisma db push",
+    "db:seed": "node scripts/seed.js",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "@prisma/client": "latest"
   },
   "devDependencies": {
     "typescript": "latest",
     "@types/react": "latest",
     "@types/node": "latest",
     "eslint": "latest",
-    "eslint-config-next": "latest"
+    "eslint-config-next": "latest",
+    "prisma": "latest"
   }
 } 
